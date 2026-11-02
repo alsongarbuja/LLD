@@ -4,6 +4,9 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Leetcode Learning Documentation",
   description: "A static site that documents the leetcode learning process I (Alson Garbuja) have been doing",
+  markdown: {
+    math: true,
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
