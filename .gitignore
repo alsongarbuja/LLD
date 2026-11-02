@@ -1,0 +1,17 @@
+# Node.js dependencies
+node_modules/
+
+# VitePress cache and build directories
+.vitepress/dist/
+.vitepress/cache/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# OS and Editor files
+.DS_Store
+.vscode/
+.idea/
+*.log
