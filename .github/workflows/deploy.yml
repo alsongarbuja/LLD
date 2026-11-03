@@ -22,19 +22,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Required if you have 'lastUpdated' enabled in VitePress
+          fetch-depth: 0 
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9 # Or your preferred pnpm version
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm 
+          cache: pnpm 
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install
 
       - name: Build with VitePress
-        run: npm run docs:build # Ensure this script exists in your package.json
+        run: pnpm run docs:build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
