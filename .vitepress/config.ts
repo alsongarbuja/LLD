@@ -38,6 +38,19 @@ export default defineConfig({
           // { text: 'String to Integer (atoi)', link: '/docs/solutions/string-to-integer-atoi' }
         ],
       },
+      {
+        text: 'Real World Problems',
+        items: [
+          { text: 'Introduction', link: '/docs/real-world-problems/introduction' },
+          { text: 'Database Scaling', link: '/docs/real-world-problems/database-scaling' },
+          // { text: 'Load Balancing', link: '/docs/real-world-problems/load-balancing' },
+          // { text: 'Caching', link: '/docs/real-world-problems/caching' },
+          // { text: 'Rate Limiting', link: '/docs/real-world-problems/rate-limiting' },
+          // { text: 'Message Queues', link: '/docs/real-world-problems/message-queues' },
+          // { text: 'Search Engines', link: '/docs/real-world-problems/search-engines' },
+          // { text: 'Content Delivery Networks (CDN)', link: '/docs/real-world-problems/content-delivery-networks-cdn' }
+        ],
+      },
     ],
 
     socialLinks: [
