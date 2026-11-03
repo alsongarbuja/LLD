@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Leetcode Learning Documentation",
+  base: "/LLD/",
   description: "A static site that documents the leetcode learning process I (Alson Garbuja) have been doing",
   markdown: {
     math: true,
