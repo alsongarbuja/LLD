@@ -41,30 +41,27 @@ Explanation: `The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We re
 - numbers is sorted in non-decreasing order.
 - -1000 <= target <= 1000
 - The tests are generated such that there is exactly one solution.
+## Brute force approach
 
-## Solutions
-
-### Brute force approach
-
-#### Visualization
+### Visualization
 
 <!-- <video controls width="100%" style="border-radius: 8px;">
   <source src="/videos/twosumiibrute.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video> -->
 
-### Hash Map
+## Hash Map
 
-#### Visualization
+### Visualization
 
 <!-- <video controls width="100%" style="border-radius: 8px;">
   <source src="/videos/twosumiihash.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video> -->
 
-### Two pointer
+## Two pointer
 
-#### Visualization
+### Visualization
 
 <!-- <video controls width="100%" style="border-radius: 8px;">
   <source src="/videos/twosumiitwopointer.mp4" type="video/mp4">

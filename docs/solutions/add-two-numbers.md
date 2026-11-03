@@ -31,9 +31,7 @@ Output: `[8,9,9,9,0,0,0,1]`
 - `0 <= Node.val <= 9`
 - It is guaranteed that the list represents a number that does not have leading zeros.
 
-## Solutions
-
-### Straight forward approach
+## Straight forward approach
 
 From the question itself we can easily guess what we need to do in order to solve the problem.
 
@@ -95,14 +93,14 @@ The time complexity doesnot look that bad considering, it will for sure take **N
 2. If say our input linked list has **100 nodes** than in some programs we have fixed size of bits allocated to an integer which means if we construct the number we will hit **an overflow error**
 3. And finally there is the cost of doing huge mathematical calculations in our case the `num1 = num1 + (head.val * multiplier)` which will need a better performing CPU based on the number of nodes to be calculated.
 
-#### Visualization
+### Visualization
 
 <video controls width="100%" style="border-radius: 8px;">
   <source src="/videos/addtwonumberssimple.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
-### Clever approach
+## One-pass approach
 
 But of course we can do better than this, or a matter of fact we have to do it better than this. How do we do it?
 
@@ -152,7 +150,7 @@ But the true advantage of solving this problem is:
 2. Mathematical calculation will also be faster as we don't have to construct any huge numbers.
 3. Also the code itself has single pass/loop instead of the 3 loops before.
 
-#### Visualization
+### Visualization
 
 <video controls width="100%" style="border-radius: 8px;">
   <source src="/videos/addtwonumbersclever.mp4" type="video/mp4">
@@ -161,7 +159,7 @@ But the true advantage of solving this problem is:
 
 ## Time complexity comparisons
 
-**Algorithm** | **Approach** | **Time Complexity** | **Storage Complexity**
+**Algorithm** | **Approach** | **Time Complexity** | **Space Complexity**
 --|--|--|--
 **Straight forward** | Construct each numbers, add them together and create the output linked list | $O(max(N, M))$ | $O(max(N, M))$
-**Clever** | In a single loop add each digit together to get the output digit with carry that can be passed to next iteration, similar to pen and paper method | $O(max(N, M))$ | $O(max(N, M))$
+**One-Pass** | In a single loop add each digit together to get the output digit with carry that can be passed to next iteration, similar to pen and paper method | $O(max(N, M))$ | $O(max(N, M))$

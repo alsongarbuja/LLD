@@ -45,9 +45,7 @@ The sum of `nums[0]` and `nums[1]` is `3 + 3 = 6`, which equals the target. Ther
 
 **Follow-up:** Can you come up with an algorithm that is less than `O(n2)` time complexity?
 
-## Solutions
-
-### Brute Force Approach
+## Brute Force Approach
 
 Looking through the question the first solution was pretty obivious with a `brute force` approach to try and add each numbers with the others to see if it matches the target and if does then return the indices.
 
@@ -63,14 +61,14 @@ def two_sum(nums, target):
 
 With the brute force approach we can see the time complexity of the algorithm is $O(n^2)$ since we need two loops one for the first number and the inner loop for the second number, thus in worst case we might have to run the algorithm $n*n$ times.
 
-#### Visualization
+### Visualization
 
 <video controls width="100%" style="border-radius: 8px;">
   <source src="/videos/twosumbrute.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
-### Hash Map Approach
+## Hash Map Approach
 
 Looking at the question we have a follow-up question in the leetcode problem that asks if we can solve the problem with a time complexity of less than $O(n^2)$. 
 
@@ -97,7 +95,7 @@ def two_sum_hash_map(nums, target):
 
 Here, we can see we have eliminated the inner loop and instead used the `dict` in python that acts as a `Hash Map` to store the numbers and check it with the current number on the loop to find the indices, dropping the time complexity from $O(n^2)$ to $O(n)$.
 
-#### Visualization
+### Visualization
 
 <video controls width="100%" style="border-radius: 8px;">
   <source src="/videos/twosumhash.mp4" type="video/mp4">
@@ -105,14 +103,14 @@ Here, we can see we have eliminated the inner loop and instead used the `dict` i
 </video>
 
 ::: info
-Although the time complexity of the algorithm drop from $O(n^2)$ to $O(n)$, we have introducted addition to the memory side of the problem with the **`brute force approach`** having a constant $O(1)$ storage complexity while the **`Hash Map approach`** needs $O(n)$ storage complexity to store the `Map data`.
+Although the time complexity of the algorithm drop from $O(n^2)$ to $O(n)$, we have introducted addition to the memory side of the problem with the **`brute force approach`** having a constant $O(1)$ space complexity while the **`Hash Map approach`** needs $O(n)$ space complexity to store the `Map data`.
 
 So we sacrified memory for speed in this case. If we had constraints on memory than brute force might have been better than Hash map approach.
 :::
 
 ## Time complexity comparisons
 
-**Algorithm** | **Approach** | **Time Complexity** | **Storage Complexity**
+**Algorithm** | **Approach** | **Time Complexity** | **Space Complexity**
 --|--|--|--
 **Brute Force** | Simply loop through each number and an inner loop to find the complement second number | $O(n^2)$ | $O(1)$
 **Hash Map** | Use a Hash Map to store the visited numbers and to find the complement second number | $O(n)$ | $O(n)$
@@ -120,6 +118,6 @@ So we sacrified memory for speed in this case. If we had constraints on memory t
 
 ## Continuation
 
-Now, comes an interesting question, **Can we have such an algorithm that has $O(n)$ time complexity and uses constant $O(1)$ storage complexity to solve the problem?**
+Now, comes an interesting question, **Can we have such an algorithm that has $O(n)$ time complexity and uses constant $O(1)$ space complexity to solve the problem?**
 
 For this one I will be documenting a method called **`Two Pointer`** in coming sections. Or jump directly to the method [here](/docs/solutions/two-sum-ii)

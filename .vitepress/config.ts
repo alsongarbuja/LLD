@@ -37,13 +37,6 @@ export default defineConfig({
           // { text: 'String to Integer (atoi)', link: '/docs/solutions/string-to-integer-atoi' }
         ],
       },
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
     ],
 
     socialLinks: [
