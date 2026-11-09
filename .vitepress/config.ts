@@ -51,6 +51,28 @@ export default defineConfig({
           // { text: 'Content Delivery Networks (CDN)', link: '/docs/real-world-problems/content-delivery-networks-cdn' }
         ],
       },
+      {
+        text: 'DSA and Patterns',
+        items: [
+          { text: 'Introduction', link: '/docs/dsa-patterns/introduction' },
+          { text: 'Two Pointers', link: '/docs/dsa-patterns/two-pointers' },
+          // { text: 'Sliding Window', link: '/docs/dsa-and-patterns/sliding-window' },
+          // { text: 'Fast and Slow Pointers', link: '/docs/dsa-and-patterns/fast-and-slow-pointers' },
+          // { text: 'Merge Intervals', link: '/docs/dsa-and-patterns/merge-intervals' },
+          // { text: 'Cyclic Sort', link: '/docs/dsa-and-patterns/cyclic-sort' },
+          // { text: 'In-place Reversal of a Linked List', link: '/docs/dsa-and-patterns/in-place-reversal-of-a-linked-list' },
+          // { text: 'Tree Breadth First Search', link: '/docs/dsa-and-patterns/tree-breadth-first-search' },
+          // { text: 'Tree Depth First Search', link: '/docs/dsa-and-patterns/tree-depth-first-search' },
+          // { text: 'Two Heaps', link: '/docs/dsa-and-patterns/two-heaps' },
+          // { text: 'Subsets', link: '/docs/dsa-and-patterns/subsets' },
+          // { text: 'Modified Binary Search', link: '/docs/dsa-and-patterns/modified-binary-search' },
+          // { text: 'Top K Elements', link: '/docs/dsa-and-patterns/top-k-elements' },
+          // { text: 'K-way Merge', link: '/docs/dsa-and-patterns/k-way-merge' },
+          // { text: '0/1 Knapsack', link: '/docs/dsa-and-patterns/0-1-knapsack' },
+          // { text: 'Dynamic Programming Patterns', link: '/docs/dsa-and-patterns/dynamic-programming-patterns' },
+          // { text: 'Bitwise XOR', link: '/docs/dsa-and-patterns/bitwise-xor' }
+        ],
+      },
     ],
 
     socialLinks: [
