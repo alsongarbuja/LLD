@@ -3,8 +3,7 @@
 layout: home
 
 hero:
-  name: "Leetcode Learning Documentation"
-  text: "A static site documenting my leetcode journey"
+  name: "Interview Cracking Documentation"
   tagline: Every thousand step starts with first single step
   actions:
     - theme: brand

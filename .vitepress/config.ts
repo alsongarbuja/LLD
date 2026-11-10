@@ -2,9 +2,9 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Leetcode Learning Documentation",
+  title: "Interview Cracking Documentation",
   base: "/LLD/",
-  description: "A static site that documents the leetcode learning process I (Alson Garbuja) have been doing",
+  description: "A static site that documents the journey for cracking interview in the field of software engineering.",
   markdown: {
     math: true,
   },
@@ -43,9 +43,9 @@ export default defineConfig({
         items: [
           { text: 'Introduction', link: '/docs/real-world-problems/introduction' },
           { text: 'Database Scaling', link: '/docs/real-world-problems/database-scaling' },
+          { text: 'Rate Limiting', link: '/docs/real-world-problems/rate-limiting' },
           // { text: 'Load Balancing', link: '/docs/real-world-problems/load-balancing' },
           // { text: 'Caching', link: '/docs/real-world-problems/caching' },
-          // { text: 'Rate Limiting', link: '/docs/real-world-problems/rate-limiting' },
           // { text: 'Message Queues', link: '/docs/real-world-problems/message-queues' },
           // { text: 'Search Engines', link: '/docs/real-world-problems/search-engines' },
           // { text: 'Content Delivery Networks (CDN)', link: '/docs/real-world-problems/content-delivery-networks-cdn' }

@@ -1,6 +1,6 @@
 # Database Scaling
 
-`Database` refers to the storage where we store the data, whereas the methods provided by the system to manipulate those data is called as `Database Management System (DBMS)`
+`Database` refers to the storage where we store the data, whereas the system that provides methods to manipulate those data is called as `Database Management System (DBMS)`
 
 Some of the prominent database/dbms are `SQL`, `Postgresql`, `MongoDB`, `VectorDB`, `Redis`, etc.
 
@@ -12,16 +12,16 @@ Each database have their own advantage and disadvantages, but here we are intere
 
 ## Answer
 
-While it seems natural to state the answer with a complex distributed scalling setup and fancy techniques like `sharding` and the first thing you must do, is **`ask your interviewer`** these questions.
+While it seems natural to state the answer with a complex distributed scalling setup and fancy techniques like `sharding`, etc. The first thing you must do, is **`ask your interviewer`** these questions.
 
 - Is the system `read-heavy` such as social media apps or `write-heavy` like logging systems?
 - What is the current bottelneck of the database, **CPU**, **RAM** or **Storage**?
-- Does our system require **strict consistency or eventual consistency is acceptable**?
+- Does our system require **strict consistency or <Tooltip text="The process of replicating the same data into multiple databases and sychronizing them on later time after the actual update has been done to the primary database">eventual consistency</Tooltip> is acceptable**?
 
 These questions will show the interviewer, we know scaling a database requires the understanding of the current workload or system needs.
 
 ::: tip
-Database scaling can be costly and take a lot of time and can introduce various problems while implementing scaling system. Thus, there is no simple and straight forward answer to database scaling needs.
+Database scaling can be costly and take a lot of time and can introduce various problems while implementing it. Thus, there is no simple and straight forward answer to database scaling needs.
 :::
 
 Now let's look at the techniques we can use to scale the database.
@@ -67,15 +67,19 @@ While spinning up replicas of the database and using load balancer to handle the
 
 What if the system is write-heavy and users require heavy operations such as uploading, proessing-intensive files or sending batch emails? we can introduce an async layer that will act as a messaging queue and update the database in controlled and safe way.
 
+Instead of directly running the **queries** to the database we add a layer of messaging queue which will hold the queries in its queue, sends the user with success status for now and executes the real database querying later in controlled manner.
+
 <img src="/imgs/asyncprocesswritelayer.png" alt="Async processing write layer" />
 
 ::: warning
-Of course, this method also comes with things to consider while implementing like the `importance of each message/process if they are all important to be processed or not and if they the order of the operations matter or not`.
+Of course, this method also comes with things to consider while implementing like the `importance of each message/process if they are all important to be processed or not and if the order of the operations matter or not`.
+
+We also need to consider the scenario where the queries in the queue fails, then how can we convey the failure to the users who have already seen the success status.
 :::
 
 ## <Tooltip text="Process of dividing the data into multiple databases based on some logical and unique key">Sharding</Tooltip> / Horizontal Scaling
 
-The final technique we can implement if the **`primary database even with massive server computing power, caching layers and message queue layers`** fails to handle the incoming massive traffic is `Horizontal scaling` or `Sharding`.
+The final technique we can implement if the **`primary database even with massive server computing power, caching layers and message queue layers`** fails to handle the incoming traffic and that is `Horizontal scaling` or `Sharding`.
 
 In this method we will use more than one database and share the data among those databases to minimize the load each database will handle.
 
@@ -86,7 +90,7 @@ We can use **logical and unique keys** to determine which database the data will
 ::: tip
 If the database is SQL-based and we must stick to it, then we can use logical keys like `Geographic region` or `hash of unique ids` to shard the data.
 
-While if the data doesnot need to be strict ACID transactions and is well suited for sharding then, we can migrate that part of the data to a horizontally scalable NoSQL database like `DynamoDB, Cassandra or MongoDB`. 
+While if the data doesnot need have strict ACID transactions and is well suited for sharding then, we can migrate that part of the data to a horizontally scalable NoSQL database like `DynamoDB, Cassandra or MongoDB`. These databases has built in support for sharding.
 :::
 
 ::: warning
@@ -96,4 +100,4 @@ SQL based databases nutoriously are difficult to shard and they will eventually 
 :::
 
 
-Here you go, the answer interviewer are looking for and what you must prepare yourself with when someone asks about database scaling. Instead of simply throwing big buzz words like sharding and distributed databases we need to make sure we know the cost and risk involved when scaling a database, and answer the question according to the situation of the system.
+Here you go, the answer interviewer are looking for and what you must prepare yourself with when someone asks about database scaling. Instead of simply throwing big buzz words like sharding and distributed databases we need to make sure we know the cost and risk involved when scaling a database, and answer the question according to the situation in hand.
